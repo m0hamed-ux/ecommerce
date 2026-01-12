@@ -1,24 +1,48 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ecom</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            menu.style.maxHeight = "0px";
+            menu.style.overflow = "hidden";
+            menu.style.transition = "max-height 0.3s ease-in-out";
+            setTimeout(() => {
+                menu.style.maxHeight = menu.scrollHeight + "px";
+            }, 10);
+        } else {
+            menu.style.maxHeight = "0px";
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300);
+        }
+    }
+</script>
+<header class="bg-white">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex-1">
+            <a href="/" class="flex items-center">
+                <img src={{ asset('logo.png') }} alt="Ecomerce Logo" class="h-8">
+            </a>
+        </div>
+        <nav class="flex-1 justify-center items-center gap-6 hidden md:flex">
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/all">Shop</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/about">About</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/contact">Contact</a>
+        </nav>
+        <div class="flex-1 flex items-center justify-end gap-2">
+            <a href="/cart">
+                <i data-lucide="shopping-cart"></i>
+            </a>
+            <button href="" onclick="toggleMenu()" class="md:hidden">
+                <i data-lucide="menu"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/products/hiking">Hiking</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/products/electronics">Electronics</a>
-                    </li>
-                </ul>
-            </div>
+        </div>
+    </div>
+    <nav id="mobile-menu" class="bg-white border-t border-gray-200 md:hidden hidden">
+        <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/all">Shop</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/about">About</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/contact">Contact</a>
         </div>
     </nav>
 </header>

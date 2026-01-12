@@ -1,0 +1,268 @@
+/* Product Cards */
+.product-card {
+    @apply bg-white rounded-xl transition-all hover:-translate-y-3;
+}
+
+.product-image-box {
+    @apply relative bg-gray-100 rounded-xl h-[340px] mb-5 overflow-hidden;
+}
+
+.product-image-box img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.product-card:hover .product-image-box img {
+    @apply scale-105;
+}
+
+.viewer-count {
+    @apply absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm py-1.5 px-3 rounded-full text-xs text-gray-900 flex items-center gap-1.5 shadow-md;
+}
+
+.viewer-count i {
+    @apply text-red-600;
+}
+
+.product-info {
+    @apply px-1;
+}
+
+.product-brand {
+    @apply text-xs text-gray-600 font-semibold uppercase tracking-wide mb-1.5;
+}
+
+.product-name {
+    @apply text-lg font-bold mb-2.5 leading-snug line-clamp-2 h-[50px];
+    font-family: 'MiSans-Bold';
+}
+
+.rating {
+    @apply flex items-center gap-2 mb-4;
+}
+
+.stars {
+    @apply text-yellow-400 text-sm;
+}
+
+.review-num {
+    @apply text-gray-600 text-[13px];
+}
+
+.product-footer {
+    @apply flex justify-between items-center;
+}
+
+.price {
+    @apply text-[22px] font-bold text-gray-900;
+    font-family: 'MiSans-Bold';
+}
+
+.add-cart-btn {
+    @apply w-11 h-11 rounded-full bg-gray-100 text-gray-900 flex items-center justify-center text-xl transition-all border-none cursor-pointer;
+}
+
+.product-card:hover .add-cart-btn {
+    @apply bg-red-600 text-white shadow-[0_5px_15px_rgba(230,0,18,0.3)];
+}
+
+/* Promo Banner */
+.promo-banner {
+    @apply my-10 py-25 text-center relative overflow-hidden;
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFFFFF 100%);
+}
+
+.promo-banner::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-[5px];
+    background: linear-gradient(90deg, #E60012, #FF8A80);
+}
+
+.promo-title {
+    @apply text-[56px] font-bold text-gray-900 mb-8;
+    font-family: 'MiSans-Bold';
+}
+
+.promo-title span {
+    @apply text-red-600;
+}
+
+.countdown {
+    @apply flex justify-center gap-8 mb-12;
+}
+
+.timer-block {
+    @apply bg-white py-5 px-8 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] min-w-[120px];
+}
+
+.timer-val {
+    @apply text-[42px] font-bold block leading-none mb-1 text-red-600;
+    font-family: 'MiSans-Bold';
+}
+
+.timer-label {
+    @apply text-sm text-gray-600 uppercase tracking-widest;
+}
+
+/* Carousel */
+.carousel-wrapper {
+    @apply flex overflow-x-auto gap-8 pb-8;
+    scroll-behavior: smooth;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    @apply min-w-[300px];
+}
+
+.new-badge {
+    @apply absolute top-4 left-4 bg-red-600 text-white py-1 px-3 text-xs font-bold rounded z-[2];
+    font-family: 'MiSans-Bold';
+}
+
+/* Testimonials */
+.testimonial-grid {
+    @apply grid grid-cols-3 gap-8;
+}
+
+.testimonial-card {
+    @apply bg-gray-50 p-10 rounded-2xl relative;
+}
+
+.quote-mark {
+    @apply text-4xl text-gray-300 absolute top-8 right-8;
+}
+
+.user-profile {
+    @apply flex items-center gap-4 mb-5;
+}
+
+.user-img {
+    @apply w-15 h-15 rounded-full object-cover;
+}
+
+.user-name {
+    @apply font-bold text-lg block mb-1;
+    font-family: 'MiSans-Bold';
+}
+
+.review-text {
+    @apply text-base leading-relaxed text-gray-600 italic;
+}
+
+.trust-badges {
+    @apply flex justify-center gap-10 mt-12 opacity-70 grayscale;
+}
+
+.trust-badge-item {
+    @apply flex items-center gap-2.5 text-lg font-bold;
+    font-family: 'MiSans-Bold';
+}
+
+/* About Section */
+.about-section {
+    @apply bg-white grid grid-cols-2 gap-20 items-center;
+}
+
+.about-list {
+    @apply grid grid-cols-2 gap-10 mt-10;
+}
+
+.about-item h4 {
+    @apply font-bold text-lg my-4;
+    font-family: 'MiSans-Bold';
+}
+
+.about-item p {
+    @apply text-sm text-gray-600 leading-relaxed;
+}
+
+.about-icon {
+    @apply w-[50px] h-[50px] bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-2xl;
+}
+
+.about-img {
+    @apply h-[600px] rounded-[20px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)];
+}
+
+.about-img img {
+    @apply w-full h-full object-cover;
+}
+
+/* Guarantees */
+.guarantees-grid {
+    @apply grid grid-cols-4 gap-8;
+}
+
+.guarantee-card {
+    @apply border border-gray-200 py-10 px-8 rounded-xl text-center transition-all hover:border-red-600 hover:shadow-[0_10px_30px_rgba(230,0,18,0.05)];
+}
+
+.guarantee-icon {
+    @apply text-4xl text-red-600 mb-6;
+}
+
+.guarantee-card h3 {
+    @apply font-bold text-xl mb-2.5;
+    font-family: 'MiSans-Bold';
+}
+
+.guarantee-card p {
+    @apply text-sm text-gray-600 leading-relaxed;
+}
+
+/* Newsletter */
+.newsletter {
+    @apply py-30 text-center bg-gray-50 border-t border-gray-200;
+}
+
+.newsletter-content {
+    @apply max-w-[600px] mx-auto;
+}
+
+.email-form {
+    @apply flex mt-10 bg-white p-2 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-200;
+}
+
+.email-input {
+    @apply flex-1 border-none py-0 px-6 text-base outline-none bg-transparent;
+}
+
+.social-proof {
+    @apply mt-5 text-sm text-gray-600;
+}
+
+.social-proof i {
+    @apply text-green-500 mr-1;
+}
+
+/* Instagram Grid */
+.insta-grid {
+    @apply grid grid-cols-6;
+}
+
+.insta-item {
+    @apply aspect-square relative overflow-hidden cursor-pointer;
+}
+
+.insta-item img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.insta-item:hover img {
+    @apply scale-110;
+}
+
+.insta-overlay {
+    @apply absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity;
+}
+
+.insta-item:hover .insta-overlay {
+    @apply opacity-100;
+}
+
+.insta-overlay i {
+    @apply text-white text-2xl;
+}
