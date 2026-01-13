@@ -15,7 +15,7 @@ $PRODUITS = [
             'id' => 2,
             'name' => 'Slim Fit Denim Jeans',
             'price' => 59.99,
-            'image' => 'https://images.unsplash.com/photo-1542272617-08f08630329e?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://i5.walmartimages.com/asr/f052c110-f857-4e9d-bc9c-68c8ddf144be.a7748c3dd3a260bcd82e264f95507047.jpeg',
             'description' => 'Dark wash slim fit jeans with a slight stretch for maximum comfort. Features a classic 5-pocket design.'
         ],
         [
@@ -36,7 +36,7 @@ $PRODUITS = [
             'id' => 5,
             'name' => 'Leather Chelsea Boots',
             'price' => 120.00,
-            'image' => 'https://images.unsplash.com/photo-1638318721455-2244243673c6?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://cdn.lookastic.com/brown-leather-chelsea-boots/leather-chelsea-boots-original-776764.jpg',
             'description' => 'Handcrafted brown leather Chelsea boots with durable elastic side panels and a non-slip rubber sole.'
         ],
         [
@@ -50,7 +50,7 @@ $PRODUITS = [
             'id' => 7,
             'name' => 'Chino Shorts',
             'price' => 35.00,
-            'image' => 'https://images.unsplash.com/photo-1617114919297-3c8ddbec0c1b?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://assets.digitalcontent.marksandspencer.app/image/upload/w_1024,q_auto,f_auto/SD_10_T08_3951_JR_X_EC_0',
             'description' => 'Breathable beige chino shorts tailored for a relaxed fit. Great for summer days and casual weekends.'
         ],
         [
@@ -71,7 +71,7 @@ $PRODUITS = [
             'id' => 10,
             'name' => 'Tailored Suit Jacket',
             'price' => 150.00,
-            'image' => 'https://images.unsplash.com/photo-1594938298603-c8148c47e356?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://cdn.suitdirect.co.uk/upload/siteimages/large/0079011_650_e.jpg',
             'description' => 'Modern charcoal grey suit jacket with a slim cut. Features interior pockets and a silk lining.'
         ]
     ],
@@ -115,14 +115,14 @@ $PRODUITS = [
             'id' => 16,
             'name' => 'Classic Trench Coat',
             'price' => 110.00,
-            'image' => 'https://images.unsplash.com/photo-1621275323956-2b47e85c1d81?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://d1fufvy4xao6k9.cloudfront.net/looks/817/Sumi%206.jpg',
             'description' => 'Timeless double-breasted trench coat with a waist belt and storm flap. Water-repellent fabric.'
         ],
         [
             'id' => 17,
             'name' => 'Leather Moto Jacket',
             'price' => 135.00,
-            'image' => 'https://images.unsplash.com/photo-1551488852-080175b94516?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://m.media-amazon.com/images/I/818+KJ7xJ-L._AC_UY1000_.jpg',
             'description' => 'Edgy black faux leather motorcycle jacket with silver hardware and zippered pockets.'
         ],
         [
@@ -238,7 +238,7 @@ $PRODUITS = [
             'id' => 33,
             'name' => 'Breathable Sport Tee',
             'price' => 25.00,
-            'image' => 'https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://i5.walmartimages.com/seo/Breathable-Quick-Drying-T-Shirt-For-Men-Summer-Loose-Sport-T-Shirt-Casual-Versatile-Tshirt_b61ceffc-0eaa-436d-a310-169200bdfced.531ca93257f3dc94ae2f6af321ae90d3.jpeg',
             'description' => 'Quick-dry athletic t-shirt. Lightweight fabric keeps you cool during intense training sessions.'
         ],
         [
