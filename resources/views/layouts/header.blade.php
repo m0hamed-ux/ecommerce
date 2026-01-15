@@ -25,7 +25,12 @@
             </a>
         </div>
         <nav class="flex-1 justify-center items-center gap-6 hidden md:flex">
-            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/all">Shop</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products">Shop</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Men">Men</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Women">Women</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Kids">Kids</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Sports">Sports</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Accessories">Accessories</a>
             <a class="text-gray-600 hover:text-black font-medium transition" href="/about">About</a>
             <a class="text-gray-600 hover:text-black font-medium transition" href="/contact">Contact</a>
         </nav>
@@ -40,7 +45,12 @@
     </div>
     <nav id="mobile-menu" class="bg-white border-t border-gray-200 md:hidden hidden">
         <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
-            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/all">Shop</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products">Shop</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Men">Men</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Women">Women</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Kids">Kids</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Sports">Sports</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Accessories">Accessories</a>
             <a class="text-gray-600 hover:text-black font-medium transition" href="/about">About</a>
             <a class="text-gray-600 hover:text-black font-medium transition" href="/contact">Contact</a>
         </div>
