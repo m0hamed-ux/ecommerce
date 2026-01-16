@@ -53,6 +53,9 @@
                 @endif
             </div>
         </section>
+        <div class="flex justify-center mb-12">
+            {{ $products->links('pagination::tailwind') }}
+        </div>
 
         <!-- Browse Other Categories -->
         @if(count($products) > 0)
