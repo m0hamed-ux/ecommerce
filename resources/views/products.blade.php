@@ -1,6 +1,9 @@
 @extends('master')
 @section('content')
     <div class="bg-gray-50 min-h-screen">
+        <div>
+            @include('incs.flash')
+        </div>
         <!-- Page Header -->
         <section class="bg-white py-12 border-b">
             <div class="container mx-auto px-4">
@@ -24,21 +27,31 @@
                 @if(count($products) > 0)
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         @foreach ($products as $product)
-                            <a href="/product/{{ $product['id'] }}" class="group bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300">
-                                <div class="aspect-square overflow-hidden bg-gray-100">
-                                    <img src="{{ $product['image'] }}" 
-                                         alt="{{ $product['name'] }}" 
-                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">{{ $product['name'] }}</h3>
-                                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">{{ $product['description'] }}</p>
-                                    <div class="flex items-center justify-between">
-                                        <span class="text-2xl font-bold text-gray-900">${{ number_format($product['price'], 2) }}</span>
-                                        <span class="text-red-600 font-semibold group-hover:translate-x-2 transition-transform">View →</span>
+                            <div class="group h-min bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300">
+                                <a href="/products/{{ $product['id'] }}">
+                                    <div class="aspect-square overflow-hidden bg-gray-100">
+                                        <img src="{{ $product['image'] }}" 
+                                             alt="{{ $product['name'] }}" 
+                                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                     </div>
+                                    <div class="p-6">
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">{{ $product['name'] }}</h3>
+                                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">{{ $product['description'] }}</p>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-2xl font-bold text-gray-900">${{ number_format($product['price'], 2) }}</span>
+                                            <span class="text-red-600 font-semibold group-hover:translate-x-2 transition-transform">View →</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="px-6 pb-6 flex gap-3">
+                                    <a href="{{ route('products.edit', $product['id']) }}" class="flex-1 text-center py-2 px-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-semibold">Edit</a>
+                                    <form action="{{ route('products.destroy', $product['id']) }}" method="POST" class="flex-1">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="w-full py-2 px-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-semibold">Delete</button>
+                                    </form>
                                 </div>
-                            </a>
+                            </div>
                         @endforeach
                     </div>
                 @else
@@ -64,7 +77,7 @@
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Browse Other Categories</h2>
                 <div class="flex flex-wrap justify-center gap-4">
                     @foreach ($categories as $cat)
-                        <a href="/products/{{ $cat }}" class="py-3 px-8 {{ $cat == $category ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-900 hover:bg-gray-200' }} rounded-full transition-colors font-semibold">{{ ucfirst($cat) }}'s</a>
+                        <a href="/products/category/{{ $cat }}" class="py-3 px-8 {{ $cat == $category ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-900 hover:bg-gray-200' }} rounded-full transition-colors font-semibold">{{ ucfirst($cat) }}'s</a>
                     @endforeach
                 </div>
             </div>

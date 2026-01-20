@@ -26,17 +26,21 @@
         </div>
         <nav class="flex-1 justify-center items-center gap-6 hidden md:flex">
             <a class="text-gray-600 hover:text-black font-medium transition" href="/products">Shop</a>
-            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Men">Men</a>
-            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Women">Women</a>
-            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Kids">Kids</a>
-            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Sports">Sports</a>
-            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/Accessories">Accessories</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/category/Men">Men</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/category/Women">Women</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/category/Kids">Kids</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/category/Sports">Sports</a>
+            <a class="text-gray-600 hover:text-black font-medium transition" href="/products/category/Accessories">Accessories</a>
             <a class="text-gray-600 hover:text-black font-medium transition" href="/about">About</a>
             <a class="text-gray-600 hover:text-black font-medium transition" href="/contact">Contact</a>
         </nav>
         <div class="flex-1 flex items-center justify-end gap-2">
             <a href="/cart">
                 <i data-lucide="shopping-cart"></i>
+            </a>
+            <a href="{{ route('products.create') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-red-600 transition">
+                <i data-lucide="plus"></i>
+                <span>Add Product</span>
             </a>
             <button href="" onclick="toggleMenu()" class="md:hidden">
                 <i data-lucide="menu"></i>
