@@ -20,6 +20,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::post('/contact/send', [RProductController::class, 'sendEmail'])->name('contact.send');
+
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('products', RProductController::class)->except(['index', 'show']);
 });

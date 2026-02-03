@@ -12,6 +12,8 @@
             </div>
         </section>
 
+
+        @include('incs.flash')
         <!-- Contact Form & Info Section -->
         <section class="py-20 bg-gray-50">
             <div class="container mx-auto px-4">
@@ -20,7 +22,8 @@
                     <div class="lg:col-span-2">
                         <div class="bg-white rounded-[20px] p-8 md:p-12 shadow-lg">
                             <h2 class="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                            <form action="#" method="POST" class="space-y-6">
+                            <form action={{ route('contact.send') }} method="POST" class="space-y-6">
+                                @csrf
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
                                         <label for="first_name" class="block text-sm font-semibold text-gray-900 mb-2">First Name</label>

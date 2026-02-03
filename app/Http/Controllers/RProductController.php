@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\AddProductRequest;
 use Cloudinary\Cloudinary;
+use Illuminate\Support\Facades\Mail;
+use \App\Mail\TestMail;
 
 class RProductController extends Controller
 {
@@ -126,5 +128,34 @@ class RProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $validated = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'nullable|string|max:20',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
+
+        try {
+            $mailData = [
+                'subject' => 'Contact Form: ' . $validated['subject'],
+                'message' => $validated['message'],
+                'first_name' => $validated['first_name'],
+                'last_name' => $validated['last_name'],
+                'email' => $validated['email'],
+                'phone' => $validated['phone'] ?? 'Not provided',
+            ];
+
+            Mail::to('elkhamlichim099@gmail.com')->send(new TestMail($mailData));
+
+            return back()->with('success', 'Thank you for contacting us! We will get back to you soon.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Failed to send message. Please try again later.');
+        }
     }
 }
