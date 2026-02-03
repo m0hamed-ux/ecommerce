@@ -86,7 +86,7 @@
             
             <div class="message-box">
                 <h3 style="margin-top: 0; color: #1f2937;">Message:</h3>
-                <p style="margin: 0; white-space: pre-wrap;">{{ $message }}</p>
+                <p style="margin: 0; white-space: pre-wrap;">{{ $messageContent }}</p>
             </div>
         </div>
         

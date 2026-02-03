@@ -144,7 +144,7 @@ class RProductController extends Controller
         try {
             $mailData = [
                 'subject' => 'Contact Form: ' . $validated['subject'],
-                'message' => $validated['message'],
+                'messageContent' => $validated['message'],
                 'first_name' => $validated['first_name'],
                 'last_name' => $validated['last_name'],
                 'email' => $validated['email'],
@@ -155,6 +155,7 @@ class RProductController extends Controller
 
             return back()->with('success', 'Thank you for contacting us! We will get back to you soon.');
         } catch (\Exception $e) {
+            \Log::error('Mail Error: ' . $e->getMessage());
             return back()->with('error', 'Failed to send message. Please try again later.');
         }
     }

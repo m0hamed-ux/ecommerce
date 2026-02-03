@@ -36,7 +36,7 @@ class TestMail extends Mailable
                 'last_name' => $this->data['last_name'],
                 'email' => $this->data['email'],
                 'phone' => $this->data['phone'],
-                'message' => $this->data['message'],
+                'messageContent' => $this->data['messageContent'],
             ],
         );
     }
