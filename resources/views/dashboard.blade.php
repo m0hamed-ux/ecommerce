@@ -4,6 +4,7 @@
         <div>
             @include('incs.flash')
         </div>
+        
         <!-- Page Header -->
         <section class="bg-white py-12 border-b">
             <div class="container mx-auto px-4">
@@ -12,10 +13,10 @@
                         <nav class="text-sm text-gray-600 mb-4">
                             <a href="/" class="hover:text-red-600">Home</a>
                             <span class="mx-2">/</span>
-                            <span class="text-gray-900 font-medium">{{ ucfirst($category) }} Hoodies</span>
+                            <span class="text-gray-900 font-medium">Dashboard</span>
                         </nav>
-                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">{{ ucfirst($category) }}'s Collection</h1>
-                        <p class="text-gray-600 mt-2">{{ count($products) }} products available</p>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Sold Products Dashboard</h1>
+                        <p class="text-gray-600 mt-2">{{ count($products) }} sold products</p>
                     </div>
                 </div>
             </div>
@@ -27,7 +28,12 @@
                 @if(count($products) > 0)
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         @foreach ($products as $product)
-                            <div class="group h-min bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300">
+                            <div class="group h-min bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 relative">
+                                <!-- Sold Badge -->
+                                <div class="absolute top-4 right-4 z-10 bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                                    Sold
+                                </div>
+                                
                                 <a href="/products/{{ $product['id'] }}">
                                     <div class="aspect-square overflow-hidden bg-gray-100">
                                         <img src="{{ $product['image'] }}" 
@@ -61,31 +67,14 @@
                 @else
                     <div class="text-center py-20">
                         <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="package-x" class="w-12 h-12 text-gray-400"></i>
+                            <i data-lucide="package-check" class="w-12 h-12 text-gray-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">No products found</h3>
-                        <p class="text-gray-600 mb-6">Try browsing other categories</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">No sold products yet</h3>
+                        <p class="text-gray-600 mb-6">Products marked as sold will appear here</p>
                         <a href="/" class="inline-block py-3 px-8 text-white bg-red-600 rounded-full hover:bg-red-700 transition-colors font-semibold">Back to Home</a>
                     </div>
                 @endif
             </div>
         </section>
-        <div class="flex justify-center mb-12">
-            {{ $products->links('pagination::tailwind') }}
-        </div>
-
-        <!-- Browse Other Categories -->
-        @if(count($products) > 0)
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Browse Other Categories</h2>
-                <div class="flex flex-wrap justify-center gap-4">
-                    @foreach ($categories as $cat)
-                        <a href="/products/category/{{ $cat }}" class="py-3 px-8 {{ $cat == $category ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-900 hover:bg-gray-200' }} rounded-full transition-colors font-semibold">{{ ucfirst($cat) }}'s</a>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-        @endif
     </div>
 @endsection

@@ -19,5 +19,8 @@ class ProductController extends Controller
         return view('products', ['products' => $products, 'category' => 'all', 'categories' => $categories]);
     }
 
-    
+    public function getSoldProducts(){
+        $soldProducts = Product::where('sold', true)->get();
+        return view('dashboard', ['products' => $soldProducts]);
+    }
 }

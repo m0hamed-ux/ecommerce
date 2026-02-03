@@ -35,13 +35,25 @@
             <a class="text-gray-600 hover:text-black font-medium transition" href="/contact">Contact</a>
         </nav>
         <div class="flex-1 flex items-center justify-end gap-2">
-            <a href="/cart">
-                <i data-lucide="shopping-cart"></i>
-            </a>
-            <a href="{{ route('products.create') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-red-600 transition">
-                <i data-lucide="plus"></i>
-                <span>Add Product</span>
-            </a>
+            @auth
+                @if(auth()->user()->role === 'admin')
+                    <a href="{{ route('products.create') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-red-600 transition">
+                        <i data-lucide="plus"></i>
+                        <span>Add Product</span>
+                    </a>
+                @endif
+                <!-- if role = user -->
+                @if(auth()->user()->role === 'user')
+                    <a href="{{ route('dashboard') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-red-600 transition">
+                        <i data-lucide="user"></i>
+                        <span>espace client</span>
+                    </a>
+                @endif
+            @endauth
+            @guest
+                <a href="/login" class="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-red-600 transition">Login</a>
+                <a href="/register" class="text-red-500 font-medium px-4 py-2 rounded-lg flex items-center gap-2 hover:text-red-600 transition">Register</a>
+            @endguest
             <button href="" onclick="toggleMenu()" class="md:hidden">
                 <i data-lucide="menu"></i>
             </button>
